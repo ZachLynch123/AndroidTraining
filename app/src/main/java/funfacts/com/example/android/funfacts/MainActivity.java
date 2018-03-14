@@ -22,7 +22,9 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // update fact TextView with new fact
+                String fact = "";
+                factTextView.setText(fact);
             }
         };
         showFactButton.setOnClickListener(listener);
