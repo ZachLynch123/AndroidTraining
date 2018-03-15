@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Update screen with new fact
                 String fact = factBook.getFact();
-                String color = colorWheel.getColors();
-                relativeLayout.setBackgroundColor(Integer.parseInt(color));
+                int color = colorWheel.getColors();
+                relativeLayout.setBackgroundColor(color);
                 factTextView.setText(fact);
             }
         };
