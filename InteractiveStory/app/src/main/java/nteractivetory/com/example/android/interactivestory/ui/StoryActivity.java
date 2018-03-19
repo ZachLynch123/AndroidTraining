@@ -1,9 +1,11 @@
-package nteractivetory.com.example.android.interactivestory;
+package nteractivetory.com.example.android.interactivestory.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import nteractivetory.com.example.android.interactivestory.R;
 
 public class StoryActivity extends AppCompatActivity {
     public static final String TAG = StoryActivity.class.getSimpleName();

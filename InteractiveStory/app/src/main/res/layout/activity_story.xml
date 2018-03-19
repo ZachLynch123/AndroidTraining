@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nteractivetory.com.example.android.interactivestory.StoryActivity">
+    tools:context="nteractivetory.com.example.android.interactivestory.ui.StoryActivity">
 
 </android.support.constraint.ConstraintLayout>

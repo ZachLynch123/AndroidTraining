@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="nteractivetory.com.example.android.interactivestory.MainActivity">
+    tools:context="nteractivetory.com.example.android.interactivestory.ui.MainActivity">
 
     <ImageView
         android:contentDescription="@string/signals_from_marse_title_image"
