@@ -19,6 +19,7 @@
         app:srcCompat="@drawable/main_title" />
 
     <Button
+        style="@style/ButtonStyle"
         android:id="@+id/startButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
