@@ -17,6 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Made the storyactivity a parent of the main activity in order to
+         enable an "up" button to the top bar to restart the app.-->
         <activity android:name=".ui.StoryActivity" android:parentActivityName=".ui.MainActivity" />
     </application>
 
