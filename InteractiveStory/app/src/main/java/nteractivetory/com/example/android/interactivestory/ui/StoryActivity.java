@@ -113,6 +113,19 @@ public class StoryActivity extends AppCompatActivity {
         }else {
             loadPage(pageStack.pop());
         }
+        /* Example
+        page 1 from page 0
+        when back is pressed, the initial pageStack.pop will take page 1 off the stack
+
+        page 0
+        the stack isn't empty so therefore it will hit the else block
+        the second pop will remove page 0. but then we're calling load page on that 0.
+        Will push page 0 back on the stack using pageStack.push(pageNumber) in loadPage
+
+        the key to understanding this sort of complexity is to talk it out and do a LOT of testing
+
+
+         */
 
     }
 }
