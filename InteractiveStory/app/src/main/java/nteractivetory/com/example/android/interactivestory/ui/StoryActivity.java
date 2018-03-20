@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -59,6 +60,14 @@ public class StoryActivity extends AppCompatActivity {
 
         if (page.isFinalPage()) {
             choice1Button.setVisibility(View.INVISIBLE);
+            choice2Button.setText(R.string.play_again_button_text);
+            choice2Button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    loadPage(0);
+
+                }
+            });
 
         } else {
 
@@ -69,6 +78,7 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     private void loadButtons(final Page page) {
+        choice1Button.setVisibility(View.VISIBLE);
         choice1Button.setText(page.getChoice1().getTextId());
         choice1Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +88,7 @@ public class StoryActivity extends AppCompatActivity {
             }
         });
 
+        choice2Button.setVisibility(View.VISIBLE);
         choice2Button.setText(page.getChoice2().getTextId());
         choice2Button.setOnClickListener(new View.OnClickListener() {
             @Override
