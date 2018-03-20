@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Stack;
+
 import nteractivetory.com.example.android.interactivestory.R;
 import nteractivetory.com.example.android.interactivestory.model.Page;
 import nteractivetory.com.example.android.interactivestory.model.Story;
@@ -25,7 +27,8 @@ public class StoryActivity extends AppCompatActivity {
     private Button choice1Button;
     private Button choice2Button;
     private String name;
-
+    // Using a generic, not a primitive
+    private Stack<Integer> pageStack = new Stack<Integer>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,9 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     private void loadPage(int pageNumber) {
+        // Build up a stack of the pages as we use them
+        pageStack.push(pageNumber);
+
         final Page page = story.getPage(pageNumber);
         Drawable image = ContextCompat.getDrawable(this, page.getImageId());
         storyImageView.setImageDrawable(image);
@@ -97,5 +103,16 @@ public class StoryActivity extends AppCompatActivity {
                 loadPage(nextPage);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        pageStack.pop();
+        if (pageStack.isEmpty()){
+            super.onBackPressed();
+        }else {
+            loadPage(pageStack.pop());
+        }
+
     }
 }
